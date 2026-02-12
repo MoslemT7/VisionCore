@@ -1,0 +1,11 @@
+performance:
+  max_cpu_percent: 80.0
+  max_ram_mb: 4096
+  max_inference_ms: 1000
+  min_fps: 5.0
+  
+alerts:
+  cpu_threshold: 90.0
+  ram_threshold: 90.0
+  inference_timeout_ms: 5000
+

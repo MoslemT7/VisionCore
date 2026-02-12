@@ -1,0 +1,26 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.section {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+

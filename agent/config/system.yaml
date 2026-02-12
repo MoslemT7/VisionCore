@@ -1,0 +1,27 @@
+system:
+  device: "cpu"
+  num_workers: 2
+  batch_size: 1
+  
+vision:
+  model: "yolov8n.pt"
+  confidence_threshold: 0.25
+  iou_threshold: 0.45
+  person_class_id: 0
+  
+llm:
+  provider: "ollama"
+  model: "llama3.2:1b"
+  temperature: 0.1
+  max_tokens: 512
+  
+api:
+  host: "127.0.0.1"
+  port: 8000
+  cors_origins: ["*"]
+  
+monitoring:
+  enabled: true
+  log_interval: 1.0
+  metrics_path: "../benchmarks/performance_logs"
+
