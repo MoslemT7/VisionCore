@@ -26,6 +26,7 @@ def create_job(job_id: str, total_frames: Optional[int] = None) -> None:
             "video_file": None,
             "energy_wh": None,
             "summary": None,
+            "summary_file": None,
             "error": None,
         }
 
@@ -65,8 +66,17 @@ def complete_job(job_id: str, result: Dict[str, Any]) -> None:
         job["finished_at"] = time.time()
         job["elapsed_time"] = job["finished_at"] - job.get("started_at", job["created_at"])
 
-        for key in ("detections_file", "video_file", "energy_wh", "summary", "performance_log", 
-                     "total_frames", "total_detections", "top_classes"):
+        for key in (
+            "detections_file",
+            "video_file",
+            "energy_wh",
+            "summary",
+            "summary_file",
+            "performance_log",
+            "total_frames",
+            "total_detections",
+            "top_classes",
+        ):
             if key in result:
                 job[key] = result[key]
 

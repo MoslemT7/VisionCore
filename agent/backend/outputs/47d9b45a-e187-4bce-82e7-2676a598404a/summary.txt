@@ -1,0 +1,1 @@
+Processed 47 frames with 376 total detections. Most common: person (219), bottle (48), cup (26), potted plant (22), tv (15). Energy: 0.2868 Wh.

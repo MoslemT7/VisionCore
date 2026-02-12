@@ -69,6 +69,7 @@ async def get_video_analysis_status(job_id: str):
             "job_id": job_id,
             "status": status,
             "summary": job.get("summary", ""),
+            "summary_file": job.get("summary_file"),
             "total_frames": job.get("total_frames", 0),
             "total_detections": job.get("total_detections", 0),
             "top_classes": job.get("top_classes", []),

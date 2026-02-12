@@ -1,7 +1,3 @@
-"""
-Resource monitoring module with GPU-safe implementation.
-Provides ResourceMonitor class and get_metrics() function for live metrics.
-"""
 import psutil
 import time
 import threading
@@ -27,10 +23,10 @@ except ImportError:
 
 class ResourceMonitor:
     """
-    Thread-based resource monitor that collects CPU, RAM, GPU metrics.
-    GPU-safe: gracefully handles missing or unavailable GPU.
+    Monitors the CPU, RAM, and GPU usage of the current process dynamically.
+    Collects metrics every `interval` seconds in a separate thread.
     """
-    
+
     def __init__(self, interval: float = 1.0):
         self.interval = interval
         self.running = False
@@ -38,9 +34,9 @@ class ResourceMonitor:
         self._start_time: Optional[float] = None
         self.thread: Optional[threading.Thread] = None
         self._lock = threading.Lock()
+        self._process = psutil.Process()  # current Python process
 
     def start(self) -> None:
-        """Start the monitoring thread."""
         if self.running:
             return
         self.running = True
@@ -49,14 +45,12 @@ class ResourceMonitor:
         self.thread.start()
 
     def stop(self) -> None:
-        """Stop the monitoring thread and wait for it to finish."""
         self.running = False
         if self.thread is not None:
             self.thread.join(timeout=2.0)
             self.thread = None
 
     def _monitor(self) -> None:
-        """Main monitoring loop running in background thread."""
         while self.running:
             metrics = self._collect_metrics()
             with self._lock:
@@ -64,60 +58,53 @@ class ResourceMonitor:
             time.sleep(self.interval)
 
     def _collect_metrics(self) -> Dict[str, Any]:
-        """Collect current system metrics."""
         now = time.time()
         elapsed = now - (self._start_time or now)
 
-        cpu = psutil.cpu_percent(interval=None)
-        ram = psutil.virtual_memory().percent
+        # CPU % for this process only
+        cpu = self._process.cpu_percent(interval=None) / psutil.cpu_count()
+        # RAM % for this process only
+        mem = self._process.memory_info().rss  # in bytes
+        ram = (mem / psutil.virtual_memory().total) * 100
 
-        gpu = None
-        gpu_mem = None
-        
+        # GPU usage for this process (approximation, overall GPU load)
+        gpu_percent = None
+        gpu_mem_percent = None
         if _GPU_AVAILABLE and _GPU_HANDLE is not None:
             try:
                 util = pynvml.nvmlDeviceGetUtilizationRates(_GPU_HANDLE)
-                mem = pynvml.nvmlDeviceGetMemoryInfo(_GPU_HANDLE)
-                gpu = util.gpu
-                gpu_mem = (mem.used / mem.total) * 100
+                mem_info = pynvml.nvmlDeviceGetMemoryInfo(_GPU_HANDLE)
+                gpu_percent = util.gpu
+                gpu_mem_percent = (mem_info.used / mem_info.total) * 100
             except (pynvml.NVMLError, Exception):
-                gpu = None
-                gpu_mem = None
+                gpu_percent = None
+                gpu_mem_percent = None
 
         return {
             "timestamp": now,
             "elapsed_time": elapsed,
             "cpu_percent": cpu,
             "ram_percent": ram,
-            "gpu_percent": gpu,
-            "gpu_memory_percent": gpu_mem,
+            "gpu_percent": gpu_percent,
+            "gpu_memory_percent": gpu_mem_percent,
         }
 
     def get_latest(self) -> Dict[str, Any]:
-        """Return the latest collected metrics."""
         with self._lock:
             if self.data:
                 return self.data[-1].copy()
         return self._collect_metrics()
 
     def get_all_data(self) -> list[Dict[str, Any]]:
-        """Return all collected metrics (thread-safe copy)."""
         with self._lock:
             return self.data.copy()
 
-
-# Global instance for get_metrics() function
 _global_monitor: Optional[ResourceMonitor] = None
 _monitor_lock = threading.Lock()
 
 
 def get_metrics() -> Dict[str, Any]:
-    """
-    Get latest system metrics (CPU, RAM, GPU, timestamp, elapsed time).
-    Creates and starts a global ResourceMonitor instance if needed.
-    """
     global _global_monitor
-    
     with _monitor_lock:
         if _global_monitor is None:
             _global_monitor = ResourceMonitor(interval=1.0)

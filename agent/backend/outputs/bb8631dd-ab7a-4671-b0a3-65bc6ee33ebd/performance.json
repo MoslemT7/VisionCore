@@ -1,0 +1,125 @@
+{
+    "energy_wh": 0.2149347222222222,
+    "resource_log": [
+        {
+            "timestamp": 1770878067.874947,
+            "elapsed_time": 0.0027494430541992188,
+            "cpu_percent": 50.0,
+            "ram_percent": 93.5,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 8.186054229736328
+        },
+        {
+            "timestamp": 1770878068.8837883,
+            "elapsed_time": 1.0115907192230225,
+            "cpu_percent": 80.9,
+            "ram_percent": 92.2,
+            "gpu_percent": 66,
+            "gpu_memory_percent": 7.753276824951172
+        },
+        {
+            "timestamp": 1770878069.8898938,
+            "elapsed_time": 2.0176961421966553,
+            "cpu_percent": 74.6,
+            "ram_percent": 92.3,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.760906219482422
+        },
+        {
+            "timestamp": 1770878070.8916187,
+            "elapsed_time": 3.019421100616455,
+            "cpu_percent": 79.8,
+            "ram_percent": 92.3,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.760906219482422
+        },
+        {
+            "timestamp": 1770878071.8932214,
+            "elapsed_time": 4.021023750305176,
+            "cpu_percent": 78.3,
+            "ram_percent": 92.1,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.760906219482422
+        },
+        {
+            "timestamp": 1770878072.8948808,
+            "elapsed_time": 5.022683143615723,
+            "cpu_percent": 83.8,
+            "ram_percent": 88.9,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.760906219482422
+        },
+        {
+            "timestamp": 1770878073.8964336,
+            "elapsed_time": 6.024235963821411,
+            "cpu_percent": 81.6,
+            "ram_percent": 88.6,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.760906219482422
+        },
+        {
+            "timestamp": 1770878074.898074,
+            "elapsed_time": 7.02587628364563,
+            "cpu_percent": 71.9,
+            "ram_percent": 88.7,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.760906219482422
+        },
+        {
+            "timestamp": 1770878075.8995855,
+            "elapsed_time": 8.027387857437134,
+            "cpu_percent": 80.7,
+            "ram_percent": 88.9,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.760906219482422
+        },
+        {
+            "timestamp": 1770878076.9011197,
+            "elapsed_time": 9.028922080993652,
+            "cpu_percent": 70.3,
+            "ram_percent": 88.6,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.982158660888672
+        },
+        {
+            "timestamp": 1770878077.9027386,
+            "elapsed_time": 10.030540943145752,
+            "cpu_percent": 63.5,
+            "ram_percent": 88.6,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.982158660888672
+        },
+        {
+            "timestamp": 1770878078.9045236,
+            "elapsed_time": 11.032325983047485,
+            "cpu_percent": 50.6,
+            "ram_percent": 88.6,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.982158660888672
+        },
+        {
+            "timestamp": 1770878079.905992,
+            "elapsed_time": 12.033794403076172,
+            "cpu_percent": 59.2,
+            "ram_percent": 88.4,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.979106903076172
+        },
+        {
+            "timestamp": 1770878080.9076831,
+            "elapsed_time": 13.03548550605774,
+            "cpu_percent": 59.9,
+            "ram_percent": 88.3,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.979106903076172
+        },
+        {
+            "timestamp": 1770878081.9092007,
+            "elapsed_time": 14.03700304031372,
+            "cpu_percent": 53.0,
+            "ram_percent": 88.4,
+            "gpu_percent": 0,
+            "gpu_memory_percent": 7.979106903076172
+        }
+    ]
+}
