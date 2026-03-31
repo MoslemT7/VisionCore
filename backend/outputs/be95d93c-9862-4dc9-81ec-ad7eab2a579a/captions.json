@@ -1,0 +1,27 @@
+{
+  "job_id": "be95d93c-9862-4dc9-81ec-ad7eab2a579a",
+  "scene_captions": [
+    {
+      "start_s": 0.0,
+      "end_s": 20.3,
+      "caption": "A steady flow of traffic moves across the frame as forty-eight cars, nine trucks, and three buses travel significant distances, while three motorcycles and two stationary people remain largely in place."
+    },
+    {
+      "start_s": 20.3,
+      "end_s": 40.6,
+      "caption": "A high volume of cars, trucks, and buses travel across the frame while a few motorcycles move slightly and two stationary people remain in the vicinity."
+    },
+    {
+      "start_s": 40.6,
+      "end_s": 60.9,
+      "caption": "A high volume of cars, trucks, and buses travel across the frame while motorcycles move shorter distances and two stationary people remain in the vicinity."
+    },
+    {
+      "start_s": 60.9,
+      "end_s": 81.2,
+      "caption": "A steady stream of cars, trucks, and buses travels across the frame while a few motorcycles and stationary people are positioned nearby."
+    }
+  ],
+  "global_caption": "This video captured a continuous flow of heavy traffic moving along a busy roadway over a period of approximately eighty seconds. The scene was dominated by a high volume of passenger vehicles, commercial trucks, and buses traveling across the frame, while a smaller number of motorcycles and pedestrians remained relatively stationary. The consistent movement patterns across all four scenes indicated a steady, uninterrupted stream of transit throughout the duration of the recording.",
+  "generated_at": "2026-03-29T18:00:52.149882+00:00"
+}

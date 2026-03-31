@@ -1,0 +1,210 @@
+{
+  "job_id": "9b9e349b-3dee-4ecc-a919-b31e1c2b0321",
+  "filename": "9b9e349b-3dee-4ecc-a919-b31e1c2b0321.mp4",
+  "status": "completed",
+  "analysed_at": "2026-03-29T16:30:31.965856+00:00",
+  "elapsed_time": 3.62,
+  "total_frames": 18,
+  "total_detections": 16,
+  "total_unique": 2,
+  "top_classes": [
+    {
+      "class": "bicycle",
+      "unique_tracks": 2
+    },
+    {
+      "class": "person",
+      "unique_tracks": 1
+    }
+  ],
+  "video_file": "outputs/9b9e349b-3dee-4ecc-a919-b31e1c2b0321\\annotated.mp4",
+  "summary_file": "outputs/9b9e349b-3dee-4ecc-a919-b31e1c2b0321\\summary.json",
+  "performance_log": [
+    {
+      "frame": 0,
+      "inference_ms": 1209.1,
+      "detections": 0,
+      "unique_so_far": 0
+    },
+    {
+      "frame": 30,
+      "inference_ms": 21.4,
+      "detections": 0,
+      "unique_so_far": 0
+    },
+    {
+      "frame": 60,
+      "inference_ms": 26.4,
+      "detections": 0,
+      "unique_so_far": 0
+    },
+    {
+      "frame": 90,
+      "inference_ms": 23.6,
+      "detections": 0,
+      "unique_so_far": 0
+    },
+    {
+      "frame": 120,
+      "inference_ms": 17.8,
+      "detections": 0,
+      "unique_so_far": 0
+    },
+    {
+      "frame": 150,
+      "inference_ms": 24.5,
+      "detections": 0,
+      "unique_so_far": 0
+    },
+    {
+      "frame": 180,
+      "inference_ms": 21.3,
+      "detections": 1,
+      "unique_so_far": 1
+    },
+    {
+      "frame": 210,
+      "inference_ms": 24.1,
+      "detections": 1,
+      "unique_so_far": 1
+    },
+    {
+      "frame": 240,
+      "inference_ms": 17.6,
+      "detections": 2,
+      "unique_so_far": 2
+    },
+    {
+      "frame": 270,
+      "inference_ms": 15.5,
+      "detections": 2,
+      "unique_so_far": 2
+    },
+    {
+      "frame": 300,
+      "inference_ms": 24.9,
+      "detections": 2,
+      "unique_so_far": 2
+    },
+    {
+      "frame": 330,
+      "inference_ms": 18.2,
+      "detections": 2,
+      "unique_so_far": 2
+    },
+    {
+      "frame": 360,
+      "inference_ms": 19.3,
+      "detections": 1,
+      "unique_so_far": 2
+    },
+    {
+      "frame": 390,
+      "inference_ms": 25.8,
+      "detections": 1,
+      "unique_so_far": 2
+    },
+    {
+      "frame": 420,
+      "inference_ms": 18.5,
+      "detections": 1,
+      "unique_so_far": 2
+    },
+    {
+      "frame": 450,
+      "inference_ms": 14.6,
+      "detections": 1,
+      "unique_so_far": 2
+    },
+    {
+      "frame": 480,
+      "inference_ms": 27.7,
+      "detections": 1,
+      "unique_so_far": 2
+    },
+    {
+      "frame": 510,
+      "inference_ms": 19.3,
+      "detections": 1,
+      "unique_so_far": 2
+    }
+  ],
+  "rich_stats": {
+    "video_meta": {
+      "width": 1280,
+      "height": 720,
+      "total_frames": 522,
+      "source_fps": 30.0,
+      "processed_fps": 1.0,
+      "frame_step": 30,
+      "duration_s": 17.4
+    },
+    "performance": {
+      "elapsed_s": 3.62,
+      "throughput_fps": 4.97,
+      "processed_frames": 18,
+      "avg_inference_ms": 87.202,
+      "min_inference_ms": 14.6,
+      "max_inference_ms": 1209.1
+    },
+    "detection_summary": {
+      "total_detections": 16,
+      "total_unique_objects": 2,
+      "num_classes": 2,
+      "avg_detections_per_frame": 0.889,
+      "max_detections_in_frame": 2
+    },
+    "class_stats": [
+      {
+        "class": "person",
+        "unique_tracks": 1,
+        "total_detections": 12,
+        "avg_conf": 0.895,
+        "avg_travel_px": 229.8,
+        "avg_box_area_px2": 113172.1
+      },
+      {
+        "class": "bicycle",
+        "unique_tracks": 1,
+        "total_detections": 4,
+        "avg_conf": 0.56,
+        "avg_travel_px": 38.25,
+        "avg_box_area_px2": 61863.2
+      }
+    ],
+    "track_details": [
+      {
+        "track_id": 7,
+        "class": "person",
+        "first_frame": 180,
+        "last_frame": 510,
+        "frame_count": 12,
+        "conf_min": 0.614,
+        "conf_max": 0.957,
+        "conf_avg": 0.895,
+        "travel_px": 229.8,
+        "avg_box_area_px2": 113172.1,
+        "last_centroid": {
+          "x": 1041.5,
+          "y": 231.5
+        }
+      },
+      {
+        "track_id": 8,
+        "class": "bicycle",
+        "first_frame": 240,
+        "last_frame": 330,
+        "frame_count": 4,
+        "conf_min": 0.477,
+        "conf_max": 0.644,
+        "conf_avg": 0.56,
+        "travel_px": 38.25,
+        "avg_box_area_px2": 61863.2,
+        "last_centroid": {
+          "x": 1044.0,
+          "y": 262.0
+        }
+      }
+    ]
+  }
+}

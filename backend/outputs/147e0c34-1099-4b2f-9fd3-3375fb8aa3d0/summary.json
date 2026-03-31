@@ -1,0 +1,40 @@
+{
+  "job_id": "147e0c34-1099-4b2f-9fd3-3375fb8aa3d0",
+  "filename": "147e0c34-1099-4b2f-9fd3-3375fb8aa3d0.mp4",
+  "status": "completed",
+  "analysed_at": "2026-03-29T16:23:53.771418+00:00",
+  "elapsed_time": 4.12,
+  "total_frames": 18,
+  "total_detections": 16,
+  "total_unique": 2,
+  "class_summary": [
+    {
+      "class": "bicycle",
+      "count": 2
+    },
+    {
+      "class": "person",
+      "count": 1
+    }
+  ],
+  "video_file": "outputs/147e0c34-1099-4b2f-9fd3-3375fb8aa3d0\\annotated.mp4",
+  "summary_file": "outputs/147e0c34-1099-4b2f-9fd3-3375fb8aa3d0\\summary.json",
+  "track_details": [
+    {
+      "track_id": 7,
+      "class": "person",
+      "first_frame": 180,
+      "last_frame": 510,
+      "frame_count": 12,
+      "conf_avg": 0.895
+    },
+    {
+      "track_id": 8,
+      "class": "bicycle",
+      "first_frame": 240,
+      "last_frame": 330,
+      "frame_count": 4,
+      "conf_avg": 0.56
+    }
+  ]
+}

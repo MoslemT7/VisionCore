@@ -1,1 +1,0 @@
-Processed 17 frames with 158 total detections. Most common: person (95), suitcase (61), bench (2). Energy: 0.0352 Wh.

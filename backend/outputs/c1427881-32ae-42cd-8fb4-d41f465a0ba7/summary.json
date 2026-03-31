@@ -1,0 +1,1446 @@
+{
+  "job_id": "c1427881-32ae-42cd-8fb4-d41f465a0ba7",
+  "filename": "c1427881-32ae-42cd-8fb4-d41f465a0ba7.mp4",
+  "status": "completed",
+  "analysed_at": "2026-03-29T16:46:32.250275+00:00",
+  "elapsed_time": 18.15,
+  "total_frames": 81,
+  "total_detections": 264,
+  "total_unique": 65,
+  "top_classes": [
+    {
+      "class": "car",
+      "unique_tracks": 52
+    },
+    {
+      "class": "truck",
+      "unique_tracks": 15
+    },
+    {
+      "class": "bus",
+      "unique_tracks": 4
+    },
+    {
+      "class": "person",
+      "unique_tracks": 3
+    },
+    {
+      "class": "motorcycle",
+      "unique_tracks": 3
+    }
+  ],
+  "video_file": "outputs/c1427881-32ae-42cd-8fb4-d41f465a0ba7\\annotated.mp4",
+  "summary_file": "outputs/c1427881-32ae-42cd-8fb4-d41f465a0ba7\\summary.json",
+  "performance_log": [
+    {
+      "frame": 930,
+      "inference_ms": 35.4,
+      "detections": 0,
+      "unique_so_far": 24
+    },
+    {
+      "frame": 960,
+      "inference_ms": 34.3,
+      "detections": 2,
+      "unique_so_far": 26
+    },
+    {
+      "frame": 990,
+      "inference_ms": 35.3,
+      "detections": 0,
+      "unique_so_far": 26
+    },
+    {
+      "frame": 1020,
+      "inference_ms": 36.7,
+      "detections": 0,
+      "unique_so_far": 26
+    },
+    {
+      "frame": 1050,
+      "inference_ms": 39.0,
+      "detections": 0,
+      "unique_so_far": 26
+    },
+    {
+      "frame": 1080,
+      "inference_ms": 40.6,
+      "detections": 0,
+      "unique_so_far": 26
+    },
+    {
+      "frame": 1110,
+      "inference_ms": 30.6,
+      "detections": 1,
+      "unique_so_far": 27
+    },
+    {
+      "frame": 1140,
+      "inference_ms": 38.3,
+      "detections": 1,
+      "unique_so_far": 27
+    },
+    {
+      "frame": 1170,
+      "inference_ms": 37.0,
+      "detections": 0,
+      "unique_so_far": 27
+    },
+    {
+      "frame": 1200,
+      "inference_ms": 28.9,
+      "detections": 0,
+      "unique_so_far": 27
+    },
+    {
+      "frame": 1230,
+      "inference_ms": 28.8,
+      "detections": 0,
+      "unique_so_far": 27
+    },
+    {
+      "frame": 1260,
+      "inference_ms": 30.2,
+      "detections": 1,
+      "unique_so_far": 28
+    },
+    {
+      "frame": 1290,
+      "inference_ms": 28.9,
+      "detections": 2,
+      "unique_so_far": 29
+    },
+    {
+      "frame": 1320,
+      "inference_ms": 29.2,
+      "detections": 2,
+      "unique_so_far": 29
+    },
+    {
+      "frame": 1350,
+      "inference_ms": 29.1,
+      "detections": 2,
+      "unique_so_far": 29
+    },
+    {
+      "frame": 1380,
+      "inference_ms": 29.4,
+      "detections": 2,
+      "unique_so_far": 29
+    },
+    {
+      "frame": 1410,
+      "inference_ms": 30.9,
+      "detections": 1,
+      "unique_so_far": 29
+    },
+    {
+      "frame": 1440,
+      "inference_ms": 38.9,
+      "detections": 2,
+      "unique_so_far": 30
+    },
+    {
+      "frame": 1470,
+      "inference_ms": 34.6,
+      "detections": 1,
+      "unique_so_far": 30
+    },
+    {
+      "frame": 1500,
+      "inference_ms": 34.3,
+      "detections": 1,
+      "unique_so_far": 30
+    },
+    {
+      "frame": 1530,
+      "inference_ms": 35.9,
+      "detections": 2,
+      "unique_so_far": 31
+    },
+    {
+      "frame": 1560,
+      "inference_ms": 37.3,
+      "detections": 2,
+      "unique_so_far": 31
+    },
+    {
+      "frame": 1590,
+      "inference_ms": 39.4,
+      "detections": 4,
+      "unique_so_far": 33
+    },
+    {
+      "frame": 1620,
+      "inference_ms": 37.9,
+      "detections": 5,
+      "unique_so_far": 34
+    },
+    {
+      "frame": 1650,
+      "inference_ms": 38.9,
+      "detections": 5,
+      "unique_so_far": 35
+    },
+    {
+      "frame": 1680,
+      "inference_ms": 35.5,
+      "detections": 5,
+      "unique_so_far": 36
+    },
+    {
+      "frame": 1710,
+      "inference_ms": 38.0,
+      "detections": 5,
+      "unique_so_far": 38
+    },
+    {
+      "frame": 1740,
+      "inference_ms": 36.9,
+      "detections": 4,
+      "unique_so_far": 38
+    },
+    {
+      "frame": 1770,
+      "inference_ms": 36.1,
+      "detections": 6,
+      "unique_so_far": 40
+    },
+    {
+      "frame": 1800,
+      "inference_ms": 38.5,
+      "detections": 8,
+      "unique_so_far": 43
+    },
+    {
+      "frame": 1830,
+      "inference_ms": 35.4,
+      "detections": 6,
+      "unique_so_far": 43
+    },
+    {
+      "frame": 1860,
+      "inference_ms": 35.5,
+      "detections": 5,
+      "unique_so_far": 43
+    },
+    {
+      "frame": 1890,
+      "inference_ms": 37.2,
+      "detections": 9,
+      "unique_so_far": 47
+    },
+    {
+      "frame": 1920,
+      "inference_ms": 38.8,
+      "detections": 9,
+      "unique_so_far": 50
+    },
+    {
+      "frame": 1950,
+      "inference_ms": 37.1,
+      "detections": 9,
+      "unique_so_far": 50
+    },
+    {
+      "frame": 1980,
+      "inference_ms": 39.2,
+      "detections": 6,
+      "unique_so_far": 51
+    },
+    {
+      "frame": 2010,
+      "inference_ms": 37.3,
+      "detections": 10,
+      "unique_so_far": 54
+    },
+    {
+      "frame": 2040,
+      "inference_ms": 36.0,
+      "detections": 8,
+      "unique_so_far": 55
+    },
+    {
+      "frame": 2070,
+      "inference_ms": 36.1,
+      "detections": 7,
+      "unique_so_far": 56
+    },
+    {
+      "frame": 2100,
+      "inference_ms": 39.0,
+      "detections": 5,
+      "unique_so_far": 56
+    },
+    {
+      "frame": 2130,
+      "inference_ms": 37.5,
+      "detections": 4,
+      "unique_so_far": 57
+    },
+    {
+      "frame": 2160,
+      "inference_ms": 44.8,
+      "detections": 5,
+      "unique_so_far": 57
+    },
+    {
+      "frame": 2190,
+      "inference_ms": 40.7,
+      "detections": 3,
+      "unique_so_far": 57
+    },
+    {
+      "frame": 2220,
+      "inference_ms": 43.7,
+      "detections": 6,
+      "unique_so_far": 59
+    },
+    {
+      "frame": 2250,
+      "inference_ms": 42.0,
+      "detections": 4,
+      "unique_so_far": 60
+    },
+    {
+      "frame": 2280,
+      "inference_ms": 41.9,
+      "detections": 3,
+      "unique_so_far": 61
+    },
+    {
+      "frame": 2310,
+      "inference_ms": 42.9,
+      "detections": 5,
+      "unique_so_far": 63
+    },
+    {
+      "frame": 2340,
+      "inference_ms": 42.2,
+      "detections": 5,
+      "unique_so_far": 64
+    },
+    {
+      "frame": 2370,
+      "inference_ms": 39.9,
+      "detections": 5,
+      "unique_so_far": 64
+    },
+    {
+      "frame": 2400,
+      "inference_ms": 40.6,
+      "detections": 5,
+      "unique_so_far": 65
+    }
+  ],
+  "rich_stats": {
+    "video_meta": {
+      "width": 1280,
+      "height": 720,
+      "total_frames": 2413,
+      "source_fps": 29.71,
+      "processed_fps": 1.0,
+      "frame_step": 30,
+      "duration_s": 81.21
+    },
+    "performance": {
+      "elapsed_s": 18.15,
+      "throughput_fps": 4.46,
+      "processed_frames": 81,
+      "avg_inference_ms": 59.278,
+      "min_inference_ms": 28.8,
+      "max_inference_ms": 1854.9
+    },
+    "detection_summary": {
+      "total_detections": 264,
+      "total_unique_objects": 65,
+      "num_classes": 5,
+      "avg_detections_per_frame": 3.259,
+      "max_detections_in_frame": 22
+    },
+    "class_stats": [
+      {
+        "class": "car",
+        "unique_tracks": 48,
+        "total_detections": 213,
+        "avg_conf": 0.716,
+        "avg_travel_px": 75.445,
+        "avg_box_area_px2": 8577.508
+      },
+      {
+        "class": "truck",
+        "unique_tracks": 9,
+        "total_detections": 31,
+        "avg_conf": 0.651,
+        "avg_travel_px": 109.816,
+        "avg_box_area_px2": 48806.456
+      },
+      {
+        "class": "person",
+        "unique_tracks": 2,
+        "total_detections": 2,
+        "avg_conf": 0.551,
+        "avg_travel_px": 0.0,
+        "avg_box_area_px2": 2192.5
+      },
+      {
+        "class": "bus",
+        "unique_tracks": 3,
+        "total_detections": 13,
+        "avg_conf": 0.79,
+        "avg_travel_px": 235.197,
+        "avg_box_area_px2": 27034.733
+      },
+      {
+        "class": "motorcycle",
+        "unique_tracks": 3,
+        "total_detections": 5,
+        "avg_conf": 0.564,
+        "avg_travel_px": 20.137,
+        "avg_box_area_px2": 3357.0
+      }
+    ],
+    "track_details": [
+      {
+        "track_id": 1,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 30,
+        "frame_count": 2,
+        "conf_min": 0.861,
+        "conf_max": 0.888,
+        "conf_avg": 0.874,
+        "travel_px": 19.65,
+        "avg_box_area_px2": 6618.0,
+        "last_centroid": {
+          "x": 58.0,
+          "y": 268.0
+        }
+      },
+      {
+        "track_id": 2,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 270,
+        "frame_count": 8,
+        "conf_min": 0.706,
+        "conf_max": 0.929,
+        "conf_avg": 0.84,
+        "travel_px": 371.08,
+        "avg_box_area_px2": 13062.0,
+        "last_centroid": {
+          "x": 1163.5,
+          "y": 463.0
+        }
+      },
+      {
+        "track_id": 3,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 30,
+        "frame_count": 2,
+        "conf_min": 0.852,
+        "conf_max": 0.864,
+        "conf_avg": 0.858,
+        "travel_px": 9.5,
+        "avg_box_area_px2": 5200.5,
+        "last_centroid": {
+          "x": 310.5,
+          "y": 272.0
+        }
+      },
+      {
+        "track_id": 4,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 30,
+        "frame_count": 2,
+        "conf_min": 0.823,
+        "conf_max": 0.855,
+        "conf_avg": 0.839,
+        "travel_px": 6.8,
+        "avg_box_area_px2": 2276.5,
+        "last_centroid": {
+          "x": 33.5,
+          "y": 149.0
+        }
+      },
+      {
+        "track_id": 5,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 0,
+        "frame_count": 1,
+        "conf_min": 0.824,
+        "conf_max": 0.824,
+        "conf_avg": 0.824,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 4234.0,
+        "last_centroid": {
+          "x": 447.5,
+          "y": 250.0
+        }
+      },
+      {
+        "track_id": 6,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 300,
+        "frame_count": 7,
+        "conf_min": 0.556,
+        "conf_max": 0.892,
+        "conf_avg": 0.811,
+        "travel_px": 330.55,
+        "avg_box_area_px2": 15058.3,
+        "last_centroid": {
+          "x": 1230.0,
+          "y": 534.0
+        }
+      },
+      {
+        "track_id": 7,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 150,
+        "frame_count": 6,
+        "conf_min": 0.376,
+        "conf_max": 0.842,
+        "conf_avg": 0.688,
+        "travel_px": 85.58,
+        "avg_box_area_px2": 2346.7,
+        "last_centroid": {
+          "x": 304.5,
+          "y": 98.0
+        }
+      },
+      {
+        "track_id": 8,
+        "class": "truck",
+        "first_frame": 0,
+        "last_frame": 150,
+        "frame_count": 4,
+        "conf_min": 0.633,
+        "conf_max": 0.748,
+        "conf_avg": 0.682,
+        "travel_px": 102.86,
+        "avg_box_area_px2": 22338.8,
+        "last_centroid": {
+          "x": 1167.5,
+          "y": 478.5
+        }
+      },
+      {
+        "track_id": 9,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 180,
+        "frame_count": 4,
+        "conf_min": 0.482,
+        "conf_max": 0.738,
+        "conf_avg": 0.61,
+        "travel_px": 31.75,
+        "avg_box_area_px2": 4898.5,
+        "last_centroid": {
+          "x": 733.5,
+          "y": 203.5
+        }
+      },
+      {
+        "track_id": 10,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 270,
+        "frame_count": 5,
+        "conf_min": 0.472,
+        "conf_max": 0.7,
+        "conf_avg": 0.597,
+        "travel_px": 22.16,
+        "avg_box_area_px2": 1011.8,
+        "last_centroid": {
+          "x": 360.5,
+          "y": 75.0
+        }
+      },
+      {
+        "track_id": 11,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 90,
+        "frame_count": 3,
+        "conf_min": 0.65,
+        "conf_max": 0.66,
+        "conf_avg": 0.657,
+        "travel_px": 25.53,
+        "avg_box_area_px2": 2432.3,
+        "last_centroid": {
+          "x": 398.5,
+          "y": 144.5
+        }
+      },
+      {
+        "track_id": 12,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 120,
+        "frame_count": 3,
+        "conf_min": 0.58,
+        "conf_max": 0.655,
+        "conf_avg": 0.624,
+        "travel_px": 20.03,
+        "avg_box_area_px2": 2891.0,
+        "last_centroid": {
+          "x": 665.5,
+          "y": 160.5
+        }
+      },
+      {
+        "track_id": 13,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 30,
+        "frame_count": 2,
+        "conf_min": 0.635,
+        "conf_max": 0.637,
+        "conf_avg": 0.636,
+        "travel_px": 3.91,
+        "avg_box_area_px2": 1852.5,
+        "last_centroid": {
+          "x": 600.0,
+          "y": 114.5
+        }
+      },
+      {
+        "track_id": 14,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 30,
+        "frame_count": 2,
+        "conf_min": 0.634,
+        "conf_max": 0.68,
+        "conf_avg": 0.657,
+        "travel_px": 6.5,
+        "avg_box_area_px2": 2047.5,
+        "last_centroid": {
+          "x": 225.0,
+          "y": 110.5
+        }
+      },
+      {
+        "track_id": 15,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 240,
+        "frame_count": 8,
+        "conf_min": 0.272,
+        "conf_max": 0.715,
+        "conf_avg": 0.488,
+        "travel_px": 86.11,
+        "avg_box_area_px2": 1218.2,
+        "last_centroid": {
+          "x": 305.0,
+          "y": 29.5
+        }
+      },
+      {
+        "track_id": 16,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 210,
+        "frame_count": 4,
+        "conf_min": 0.305,
+        "conf_max": 0.718,
+        "conf_avg": 0.521,
+        "travel_px": 16.06,
+        "avg_box_area_px2": 831.8,
+        "last_centroid": {
+          "x": 361.5,
+          "y": 63.5
+        }
+      },
+      {
+        "track_id": 17,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 90,
+        "frame_count": 3,
+        "conf_min": 0.505,
+        "conf_max": 0.872,
+        "conf_avg": 0.637,
+        "travel_px": 109.83,
+        "avg_box_area_px2": 41202.7,
+        "last_centroid": {
+          "x": 1125.0,
+          "y": 603.0
+        }
+      },
+      {
+        "track_id": 18,
+        "class": "person",
+        "first_frame": 0,
+        "last_frame": 0,
+        "frame_count": 1,
+        "conf_min": 0.451,
+        "conf_max": 0.451,
+        "conf_avg": 0.451,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 945.0,
+        "last_centroid": {
+          "x": 780.5,
+          "y": 180.5
+        }
+      },
+      {
+        "track_id": 19,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 30,
+        "frame_count": 2,
+        "conf_min": 0.45,
+        "conf_max": 0.586,
+        "conf_avg": 0.518,
+        "travel_px": 26.17,
+        "avg_box_area_px2": 12555.0,
+        "last_centroid": {
+          "x": 804.0,
+          "y": 340.5
+        }
+      },
+      {
+        "track_id": 20,
+        "class": "car",
+        "first_frame": 0,
+        "last_frame": 30,
+        "frame_count": 2,
+        "conf_min": 0.41,
+        "conf_max": 0.536,
+        "conf_avg": 0.473,
+        "travel_px": 8.9,
+        "avg_box_area_px2": 23167.5,
+        "last_centroid": {
+          "x": 1203.5,
+          "y": 518.5
+        }
+      },
+      {
+        "track_id": 21,
+        "class": "truck",
+        "first_frame": 0,
+        "last_frame": 240,
+        "frame_count": 5,
+        "conf_min": 0.278,
+        "conf_max": 0.871,
+        "conf_avg": 0.562,
+        "travel_px": 78.11,
+        "avg_box_area_px2": 18462.0,
+        "last_centroid": {
+          "x": 1239.5,
+          "y": 559.5
+        }
+      },
+      {
+        "track_id": 22,
+        "class": "truck",
+        "first_frame": 0,
+        "last_frame": 0,
+        "frame_count": 1,
+        "conf_min": 0.357,
+        "conf_max": 0.357,
+        "conf_avg": 0.357,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 11880.0,
+        "last_centroid": {
+          "x": 785.0,
+          "y": 322.5
+        }
+      },
+      {
+        "track_id": 68,
+        "class": "car",
+        "first_frame": 180,
+        "last_frame": 240,
+        "frame_count": 2,
+        "conf_min": 0.767,
+        "conf_max": 0.83,
+        "conf_avg": 0.798,
+        "travel_px": 40.14,
+        "avg_box_area_px2": 6870.5,
+        "last_centroid": {
+          "x": 795.5,
+          "y": 239.5
+        }
+      },
+      {
+        "track_id": 179,
+        "class": "bus",
+        "first_frame": 450,
+        "last_frame": 540,
+        "frame_count": 2,
+        "conf_min": 0.59,
+        "conf_max": 0.641,
+        "conf_avg": 0.616,
+        "travel_px": 11.1,
+        "avg_box_area_px2": 1770.0,
+        "last_centroid": {
+          "x": 17.5,
+          "y": 75.0
+        }
+      },
+      {
+        "track_id": 329,
+        "class": "car",
+        "first_frame": 960,
+        "last_frame": 960,
+        "frame_count": 1,
+        "conf_min": 0.837,
+        "conf_max": 0.837,
+        "conf_avg": 0.837,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 702.0,
+        "last_centroid": {
+          "x": 365.5,
+          "y": 48.0
+        }
+      },
+      {
+        "track_id": 331,
+        "class": "car",
+        "first_frame": 960,
+        "last_frame": 960,
+        "frame_count": 1,
+        "conf_min": 0.649,
+        "conf_max": 0.649,
+        "conf_avg": 0.649,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 600.0,
+        "last_centroid": {
+          "x": 261.0,
+          "y": 36.5
+        }
+      },
+      {
+        "track_id": 357,
+        "class": "car",
+        "first_frame": 1110,
+        "last_frame": 1140,
+        "frame_count": 2,
+        "conf_min": 0.661,
+        "conf_max": 0.792,
+        "conf_avg": 0.727,
+        "travel_px": 13.01,
+        "avg_box_area_px2": 781.5,
+        "last_centroid": {
+          "x": 298.0,
+          "y": 28.5
+        }
+      },
+      {
+        "track_id": 385,
+        "class": "truck",
+        "first_frame": 1260,
+        "last_frame": 1440,
+        "frame_count": 7,
+        "conf_min": 0.445,
+        "conf_max": 0.897,
+        "conf_avg": 0.611,
+        "travel_px": 182.16,
+        "avg_box_area_px2": 7328.3,
+        "last_centroid": {
+          "x": 26.5,
+          "y": 121.5
+        }
+      },
+      {
+        "track_id": 392,
+        "class": "truck",
+        "first_frame": 1290,
+        "last_frame": 1380,
+        "frame_count": 4,
+        "conf_min": 0.611,
+        "conf_max": 0.943,
+        "conf_avg": 0.796,
+        "travel_px": 517.12,
+        "avg_box_area_px2": 290315.2,
+        "last_centroid": {
+          "x": 320.0,
+          "y": 370.0
+        }
+      },
+      {
+        "track_id": 442,
+        "class": "car",
+        "first_frame": 1440,
+        "last_frame": 2070,
+        "frame_count": 19,
+        "conf_min": 0.463,
+        "conf_max": 0.932,
+        "conf_avg": 0.895,
+        "travel_px": 195.96,
+        "avg_box_area_px2": 14028.7,
+        "last_centroid": {
+          "x": 969.0,
+          "y": 450.5
+        }
+      },
+      {
+        "track_id": 490,
+        "class": "truck",
+        "first_frame": 1530,
+        "last_frame": 1680,
+        "frame_count": 6,
+        "conf_min": 0.612,
+        "conf_max": 0.711,
+        "conf_avg": 0.667,
+        "travel_px": 99.08,
+        "avg_box_area_px2": 6583.8,
+        "last_centroid": {
+          "x": 243.5,
+          "y": 67.0
+        }
+      },
+      {
+        "track_id": 524,
+        "class": "car",
+        "first_frame": 1590,
+        "last_frame": 2100,
+        "frame_count": 13,
+        "conf_min": 0.282,
+        "conf_max": 0.846,
+        "conf_avg": 0.614,
+        "travel_px": 144.81,
+        "avg_box_area_px2": 14280.4,
+        "last_centroid": {
+          "x": 1188.5,
+          "y": 391.0
+        }
+      },
+      {
+        "track_id": 537,
+        "class": "car",
+        "first_frame": 1590,
+        "last_frame": 2010,
+        "frame_count": 14,
+        "conf_min": 0.532,
+        "conf_max": 0.878,
+        "conf_avg": 0.75,
+        "travel_px": 102.17,
+        "avg_box_area_px2": 13333.7,
+        "last_centroid": {
+          "x": 806.0,
+          "y": 323.0
+        }
+      },
+      {
+        "track_id": 552,
+        "class": "car",
+        "first_frame": 1620,
+        "last_frame": 1620,
+        "frame_count": 1,
+        "conf_min": 0.532,
+        "conf_max": 0.532,
+        "conf_avg": 0.532,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 1364.0,
+        "last_centroid": {
+          "x": 698.0,
+          "y": 92.5
+        }
+      },
+      {
+        "track_id": 573,
+        "class": "car",
+        "first_frame": 1650,
+        "last_frame": 1650,
+        "frame_count": 1,
+        "conf_min": 0.716,
+        "conf_max": 0.716,
+        "conf_avg": 0.716,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 1881.0,
+        "last_centroid": {
+          "x": 785.5,
+          "y": 114.5
+        }
+      },
+      {
+        "track_id": 596,
+        "class": "car",
+        "first_frame": 1680,
+        "last_frame": 1680,
+        "frame_count": 1,
+        "conf_min": 0.698,
+        "conf_max": 0.698,
+        "conf_avg": 0.698,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 3864.0,
+        "last_centroid": {
+          "x": 716.5,
+          "y": 183.0
+        }
+      },
+      {
+        "track_id": 603,
+        "class": "car",
+        "first_frame": 1710,
+        "last_frame": 1950,
+        "frame_count": 8,
+        "conf_min": 0.842,
+        "conf_max": 0.925,
+        "conf_avg": 0.885,
+        "travel_px": 218.54,
+        "avg_box_area_px2": 12541.6,
+        "last_centroid": {
+          "x": 1103.0,
+          "y": 440.5
+        }
+      },
+      {
+        "track_id": 610,
+        "class": "person",
+        "first_frame": 1710,
+        "last_frame": 1710,
+        "frame_count": 1,
+        "conf_min": 0.652,
+        "conf_max": 0.652,
+        "conf_avg": 0.652,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 3440.0,
+        "last_centroid": {
+          "x": 1034.0,
+          "y": 416.0
+        }
+      },
+      {
+        "track_id": 647,
+        "class": "motorcycle",
+        "first_frame": 1770,
+        "last_frame": 1770,
+        "frame_count": 1,
+        "conf_min": 0.532,
+        "conf_max": 0.532,
+        "conf_avg": 0.532,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 3450.0,
+        "last_centroid": {
+          "x": 1048.0,
+          "y": 452.5
+        }
+      },
+      {
+        "track_id": 648,
+        "class": "truck",
+        "first_frame": 1770,
+        "last_frame": 1800,
+        "frame_count": 2,
+        "conf_min": 0.452,
+        "conf_max": 0.49,
+        "conf_avg": 0.471,
+        "travel_px": 9.01,
+        "avg_box_area_px2": 2065.0,
+        "last_centroid": {
+          "x": 257.0,
+          "y": 28.5
+        }
+      },
+      {
+        "track_id": 650,
+        "class": "truck",
+        "first_frame": 1800,
+        "last_frame": 1800,
+        "frame_count": 1,
+        "conf_min": 0.935,
+        "conf_max": 0.935,
+        "conf_avg": 0.935,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 72275.0,
+        "last_centroid": {
+          "x": 1072.5,
+          "y": 620.5
+        }
+      },
+      {
+        "track_id": 657,
+        "class": "car",
+        "first_frame": 1800,
+        "last_frame": 1920,
+        "frame_count": 5,
+        "conf_min": 0.48,
+        "conf_max": 0.88,
+        "conf_avg": 0.74,
+        "travel_px": 154.67,
+        "avg_box_area_px2": 10225.2,
+        "last_centroid": {
+          "x": 1006.5,
+          "y": 376.0
+        }
+      },
+      {
+        "track_id": 666,
+        "class": "motorcycle",
+        "first_frame": 1800,
+        "last_frame": 1890,
+        "frame_count": 3,
+        "conf_min": 0.561,
+        "conf_max": 0.848,
+        "conf_avg": 0.66,
+        "travel_px": 60.41,
+        "avg_box_area_px2": 5739.0,
+        "last_centroid": {
+          "x": 1238.0,
+          "y": 441.0
+        }
+      },
+      {
+        "track_id": 718,
+        "class": "car",
+        "first_frame": 1890,
+        "last_frame": 1890,
+        "frame_count": 1,
+        "conf_min": 0.801,
+        "conf_max": 0.801,
+        "conf_avg": 0.801,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 1064.0,
+        "last_centroid": {
+          "x": 14.0,
+          "y": 112.0
+        }
+      },
+      {
+        "track_id": 716,
+        "class": "car",
+        "first_frame": 1890,
+        "last_frame": 2040,
+        "frame_count": 4,
+        "conf_min": 0.556,
+        "conf_max": 0.8,
+        "conf_avg": 0.668,
+        "travel_px": 92.04,
+        "avg_box_area_px2": 7197.5,
+        "last_centroid": {
+          "x": 1009.0,
+          "y": 294.0
+        }
+      },
+      {
+        "track_id": 712,
+        "class": "car",
+        "first_frame": 1890,
+        "last_frame": 2010,
+        "frame_count": 5,
+        "conf_min": 0.681,
+        "conf_max": 0.825,
+        "conf_avg": 0.765,
+        "travel_px": 129.45,
+        "avg_box_area_px2": 9872.8,
+        "last_centroid": {
+          "x": 966.5,
+          "y": 342.0
+        }
+      },
+      {
+        "track_id": 722,
+        "class": "car",
+        "first_frame": 1890,
+        "last_frame": 1980,
+        "frame_count": 4,
+        "conf_min": 0.528,
+        "conf_max": 0.806,
+        "conf_avg": 0.667,
+        "travel_px": 37.65,
+        "avg_box_area_px2": 6014.5,
+        "last_centroid": {
+          "x": 773.0,
+          "y": 294.0
+        }
+      },
+      {
+        "track_id": 727,
+        "class": "car",
+        "first_frame": 1920,
+        "last_frame": 2130,
+        "frame_count": 8,
+        "conf_min": 0.533,
+        "conf_max": 0.788,
+        "conf_avg": 0.648,
+        "travel_px": 174.02,
+        "avg_box_area_px2": 3786.8,
+        "last_centroid": {
+          "x": 103.0,
+          "y": 111.5
+        }
+      },
+      {
+        "track_id": 734,
+        "class": "car",
+        "first_frame": 1920,
+        "last_frame": 2370,
+        "frame_count": 12,
+        "conf_min": 0.335,
+        "conf_max": 0.86,
+        "conf_avg": 0.712,
+        "travel_px": 218.49,
+        "avg_box_area_px2": 3987.9,
+        "last_centroid": {
+          "x": 721.5,
+          "y": 270.5
+        }
+      },
+      {
+        "track_id": 732,
+        "class": "car",
+        "first_frame": 1920,
+        "last_frame": 2280,
+        "frame_count": 11,
+        "conf_min": 0.613,
+        "conf_max": 0.871,
+        "conf_avg": 0.727,
+        "travel_px": 232.31,
+        "avg_box_area_px2": 7461.4,
+        "last_centroid": {
+          "x": 804.0,
+          "y": 342.0
+        }
+      },
+      {
+        "track_id": 775,
+        "class": "car",
+        "first_frame": 1980,
+        "last_frame": 2340,
+        "frame_count": 11,
+        "conf_min": 0.494,
+        "conf_max": 0.818,
+        "conf_avg": 0.659,
+        "travel_px": 162.99,
+        "avg_box_area_px2": 2881.3,
+        "last_centroid": {
+          "x": 672.5,
+          "y": 229.0
+        }
+      },
+      {
+        "track_id": 782,
+        "class": "car",
+        "first_frame": 2010,
+        "last_frame": 2220,
+        "frame_count": 5,
+        "conf_min": 0.822,
+        "conf_max": 0.9,
+        "conf_avg": 0.851,
+        "travel_px": 153.45,
+        "avg_box_area_px2": 7793.8,
+        "last_centroid": {
+          "x": 942.0,
+          "y": 330.5
+        }
+      },
+      {
+        "track_id": 794,
+        "class": "car",
+        "first_frame": 2010,
+        "last_frame": 2010,
+        "frame_count": 1,
+        "conf_min": 0.646,
+        "conf_max": 0.646,
+        "conf_avg": 0.646,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 1680.0,
+        "last_centroid": {
+          "x": 533.0,
+          "y": 112.0
+        }
+      },
+      {
+        "track_id": 791,
+        "class": "motorcycle",
+        "first_frame": 2010,
+        "last_frame": 2010,
+        "frame_count": 1,
+        "conf_min": 0.499,
+        "conf_max": 0.499,
+        "conf_avg": 0.499,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 882.0,
+        "last_centroid": {
+          "x": 255.5,
+          "y": 182.0
+        }
+      },
+      {
+        "track_id": 801,
+        "class": "car",
+        "first_frame": 2040,
+        "last_frame": 2040,
+        "frame_count": 1,
+        "conf_min": 0.496,
+        "conf_max": 0.496,
+        "conf_avg": 0.496,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 3082.0,
+        "last_centroid": {
+          "x": 688.5,
+          "y": 221.0
+        }
+      },
+      {
+        "track_id": 817,
+        "class": "car",
+        "first_frame": 2070,
+        "last_frame": 2160,
+        "frame_count": 2,
+        "conf_min": 0.872,
+        "conf_max": 0.908,
+        "conf_avg": 0.89,
+        "travel_px": 75.72,
+        "avg_box_area_px2": 23568.0,
+        "last_centroid": {
+          "x": 600.0,
+          "y": 614.0
+        }
+      },
+      {
+        "track_id": 865,
+        "class": "car",
+        "first_frame": 2130,
+        "last_frame": 2250,
+        "frame_count": 3,
+        "conf_min": 0.436,
+        "conf_max": 0.694,
+        "conf_avg": 0.588,
+        "travel_px": 39.46,
+        "avg_box_area_px2": 2674.7,
+        "last_centroid": {
+          "x": 599.0,
+          "y": 169.0
+        }
+      },
+      {
+        "track_id": 918,
+        "class": "bus",
+        "first_frame": 2220,
+        "last_frame": 2400,
+        "frame_count": 7,
+        "conf_min": 0.626,
+        "conf_max": 0.955,
+        "conf_avg": 0.88,
+        "travel_px": 426.02,
+        "avg_box_area_px2": 27475.4,
+        "last_centroid": {
+          "x": 213.0,
+          "y": 140.5
+        }
+      },
+      {
+        "track_id": 914,
+        "class": "car",
+        "first_frame": 2220,
+        "last_frame": 2370,
+        "frame_count": 3,
+        "conf_min": 0.847,
+        "conf_max": 0.916,
+        "conf_avg": 0.874,
+        "travel_px": 54.81,
+        "avg_box_area_px2": 12870.3,
+        "last_centroid": {
+          "x": 871.0,
+          "y": 393.0
+        }
+      },
+      {
+        "track_id": 928,
+        "class": "car",
+        "first_frame": 2250,
+        "last_frame": 2400,
+        "frame_count": 3,
+        "conf_min": 0.822,
+        "conf_max": 0.92,
+        "conf_avg": 0.881,
+        "travel_px": 75.1,
+        "avg_box_area_px2": 21095.0,
+        "last_centroid": {
+          "x": 999.5,
+          "y": 498.5
+        }
+      },
+      {
+        "track_id": 958,
+        "class": "car",
+        "first_frame": 2280,
+        "last_frame": 2280,
+        "frame_count": 1,
+        "conf_min": 0.86,
+        "conf_max": 0.86,
+        "conf_avg": 0.86,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 27675.0,
+        "last_centroid": {
+          "x": 1173.5,
+          "y": 570.5
+        }
+      },
+      {
+        "track_id": 966,
+        "class": "bus",
+        "first_frame": 2310,
+        "last_frame": 2400,
+        "frame_count": 4,
+        "conf_min": 0.657,
+        "conf_max": 0.963,
+        "conf_avg": 0.875,
+        "travel_px": 268.47,
+        "avg_box_area_px2": 51858.8,
+        "last_centroid": {
+          "x": 151.0,
+          "y": 283.0
+        }
+      },
+      {
+        "track_id": 977,
+        "class": "car",
+        "first_frame": 2310,
+        "last_frame": 2370,
+        "frame_count": 2,
+        "conf_min": 0.781,
+        "conf_max": 0.855,
+        "conf_avg": 0.818,
+        "travel_px": 84.29,
+        "avg_box_area_px2": 30176.0,
+        "last_centroid": {
+          "x": 334.0,
+          "y": 563.0
+        }
+      },
+      {
+        "track_id": 995,
+        "class": "car",
+        "first_frame": 2340,
+        "last_frame": 2400,
+        "frame_count": 2,
+        "conf_min": 0.79,
+        "conf_max": 0.867,
+        "conf_avg": 0.828,
+        "travel_px": 42.17,
+        "avg_box_area_px2": 15462.0,
+        "last_centroid": {
+          "x": 329.0,
+          "y": 398.5
+        }
+      },
+      {
+        "track_id": 1026,
+        "class": "truck",
+        "first_frame": 2400,
+        "last_frame": 2400,
+        "frame_count": 1,
+        "conf_min": 0.779,
+        "conf_max": 0.779,
+        "conf_avg": 0.779,
+        "travel_px": 0.0,
+        "avg_box_area_px2": 8010.0,
+        "last_centroid": {
+          "x": 889.0,
+          "y": 229.5
+        }
+      }
+    ]
+  }
+}
