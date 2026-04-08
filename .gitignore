@@ -34,7 +34,10 @@ __pycache__/
 
 # App-specific storage
 output/
+outputs/
 uploads/
 data/
 config/
 !config.example.json
+models/
+runs/
