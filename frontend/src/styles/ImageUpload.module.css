@@ -1,0 +1,83 @@
+.container {
+  width: 100%;
+}
+
+.uploadSection {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.fileInput {
+  display: none;
+}
+
+.button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  background: #0052a3;
+}
+
+.button:disabled {
+  background: #3a3a3a;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff4444;
+  padding: 10px;
+  background: #2a1a1a;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 15px;
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+.summary {
+  margin-bottom: 15px;
+}
+
+.count {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0066cc;
+  margin-bottom: 10px;
+}
+
+.metrics {
+  display: flex;
+  gap: 15px;
+  font-size: 12px;
+  color: #b0b0b0;
+}
+
+.detections {
+  margin-top: 15px;
+}
+
+.detection {
+  padding: 10px;
+  background: #1a1a1a;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.detection div {
+  margin-bottom: 4px;
+}
+

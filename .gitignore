@@ -1,43 +1,271 @@
-# OS files
+# ─── OS & System ────────────────────────────────────────────────────────────
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
 
-# Dependencies
-node_modules/
-vendor/
-venv/
-.venv/
-
-# Build and IDE
+# ─── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
 dist/
 build/
-.vscode/
-.idea/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+MANIFEST
+.python-version
+pip-log.txt
+pip-delete-this-directory.txt
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+.hypothesis/
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.coverage
+*.coverage.*
+.coverage
+htmlcov/
+nosetests.xml
+pytestdebug.log
 
-# Logs and temporary files
-*.log
+# ─── Virtual Environments ────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+virtualenv/
+.virtualenv/
+Pipfile.lock
+poetry.lock
+pdm.lock
+
+# ─── Node / JavaScript / TypeScript ─────────────────────────────────────────
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+yarn.lock
+pnpm-debug.log*
+.pnpm-store/
+lerna-debug.log*
+.npm
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
 .eslintcache
+.stylelintcache
+.parcel-cache/
+.next/
+.nuxt/
+.svelte-kit/
+.solid/
+.astro/
+.turbo/
+.output/
+.vercel/
+.netlify/
+storybook-static/
+out/
 
-# Python
-__pycache__/
-*.py[cod]
+# ─── Build & Dist ────────────────────────────────────────────────────────────
+dist/
+build/
+dist-ssr/
+*.local
+*.tsbuildinfo
 
-# Environment and Secrets
+# ─── Environment & Secrets ───────────────────────────────────────────────────
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+.secrets/
+credentials/
 
-# App-specific storage
-output/
-outputs/
-uploads/
-data/
-config/
-!config.example.json
+# ─── IDEs & Editors ──────────────────────────────────────────────────────────
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.iml
+*.ipr
+*.iws
+.fleet/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.tmproj
+*.esproj
+nbproject/
+.ionide/
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+logs/
+*.log
+*.log.*
+log/
+
+# ─── ML / AI / YOLO / CV ─────────────────────────────────────────────────────
 models/
+*.pt
+*.pth
+*.onnx
+*.engine
+*.tflite
+*.pb
+*.caffemodel
+*.prototxt
 runs/
+weights/
+checkpoints/
+wandb/
+mlruns/
+.mlflow/
+lightning_logs/
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+
+# ─── Data & Storage ──────────────────────────────────────────────────────────
+data/
+datasets/
+uploads/
+outputs/
+output/
+frames/
+cache/
+.cache/
+tmp/
+temp/
+scratch/
+raw/
+
+# ─── Config (keep examples) ──────────────────────────────────────────────────
+config/
+!config/example/
+!config.example.*
+!*.example.yaml
+!*.example.yml
+!*.example.json
+!*.example.toml
+
+# ─── Databases ───────────────────────────────────────────────────────────────
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+*.mdb
+*.accdb
+dump.rdb
+
+# ─── Docker ──────────────────────────────────────────────────────────────────
+.docker/
+docker-compose.override.yml
+
+# ─── Cloud & Infra ───────────────────────────────────────────────────────────
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+.pulumi/
+.serverless/
+.amplify/
+.firebase/
+.gcloud/
+*.kubeconfig
+kubeconfig
+
+# ─── Media & Large Binary Assets ─────────────────────────────────────────────
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.flv
+*.wmv
+*.mp3
+*.wav
+*.flac
+*.psd
+*.ai
+*.sketch
+*.fig
+*.xd
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.iso
+*.dmg
+*.exe
+*.msi
+*.apk
+*.ipa
+
+# ─── Jupyter ─────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# ─── Misc ────────────────────────────────────────────────────────────────────
+*.bak
+*.orig
+*.patch
+*.diff
+*.DS_Store
+.history/
+.idea/
+*.iml
+vendor/
+Makefile.local
