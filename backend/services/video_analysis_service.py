@@ -505,7 +505,8 @@ def analyze_video_job(job_id: str, video_path: str, output_dir: str) -> None:
                 detections_per_frame.append(frame_det_count)
                 processed_frames += 1
 
-                progress = int((frame_idx / max(total_frames, 1)) * 100)
+                progress = int((processed_frames / max(total_frames // frame_step, 1)) * 100)
+
                 performance_log.append({
                     "frame":         frame_idx,
                     "inference_ms":  round(inference_ms, 1),

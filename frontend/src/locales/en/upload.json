@@ -1,0 +1,12 @@
+{
+    "mainTitle": "Upload Footage to Analyse",
+    "mainText": "The AI pipeline detects and tracks persons, generating a full behavioural report.",
+    "mainFeatures": {
+        "detect": "Persons Detections",
+        "track": "Persons Tracking",
+        "analysis": "Frame Analysis"
+    },
+    "upload": {
+        "text": "Drag and drop your video files here, or click to select files"
+    }
+}

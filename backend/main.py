@@ -10,6 +10,7 @@ from routes.settings  import router as settings_router
 from routes.thumbnail import router as thumbnail_router
 from routes.settings import router as settings_router
 from routes.globalChat import router as globalChat_router
+from routes.auth import router as auth_router
 from routes.chat import router as chat_router
 from db.mongo        import close_client
 from db.analysis_record import ensure_indexes
@@ -49,6 +50,7 @@ def create_app() -> FastAPI:
     app.include_router(caption_router)
     app.include_router(globalChat_router)
     app.include_router(chat_router)
+    app.include_router(auth_router)
     app.include_router(settings_router)
     app.include_router(thumbnail_router)
     app.include_router(settings_router)

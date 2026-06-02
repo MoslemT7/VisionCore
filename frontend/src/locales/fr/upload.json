@@ -1,0 +1,12 @@
+{
+    "mainTitle": "Importer des images à analyser",
+    "mainText": "Le pipeline d'IA détecte et suit les personnes, générant un rapport comportemental complet.",
+    "mainFeatures": {
+        "detect": "Détection de personnes",
+        "track": "Suivi des personnes",
+        "analysis": "Rapport comportemental complet"
+    },
+    "upload": {
+        "text": "Faites glisser et déposez vos fichiers vidéo ici, ou cliquez pour sélectionner des fichiers"
+    }
+}

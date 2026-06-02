@@ -14,6 +14,14 @@ const SUGGESTIONS = [
 
 function Message({ role, content }) {
   const isUser = role === "user";
+  let text = "";
+  try {
+    const parsed = typeof content === "string" ? JSON.parse(content) : content;
+    text = parsed?.answer ?? (typeof content === "string" ? content : JSON.stringify(content ?? ""));
+  } catch {
+    text = typeof content === "string" ? content : JSON.stringify(content ?? "");
+  }
+  
   return (
     <div className={`flex gap-3 ${isUser ? "flex-row-reverse" : "flex-row"}`}>
       <div className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center
@@ -28,8 +36,7 @@ function Message({ role, content }) {
           ? "bg-blue-600/20 border border-blue-500/20 text-slate-200 rounded-tr-sm"
           : "bg-slate-800/70 border border-slate-700/40 text-slate-300 rounded-tl-sm"
         }`}>
-        
-        <ReactMarkdown 
+        <ReactMarkdown
           components={{
             p: ({node, ...props}) => <p className="mb-1 last:mb-0" {...props} />,
             ul: ({node, ...props}) => <ul className="list-disc ml-4 mb-2" {...props} />,
@@ -39,9 +46,8 @@ function Message({ role, content }) {
             code: ({node, ...props}) => <code className="bg-slate-900 px-1 rounded text-blue-300 font-mono" {...props} />
           }}
         >
-          {content}
+          {text}
         </ReactMarkdown>
-
       </div>
     </div>
   );
@@ -107,14 +113,14 @@ export default function ChatTab({ Card, PlaceholderBox, result }) {
     setError(null);
 
     try {
-      const response = await chatApi.send(jobId, q, history);
-      setHistory([...next, { role: "assistant", content: response.answer }]);
+      const data = await chatApi.send(jobId, q, history);
+      const answer = typeof data.answer === "string" ? data.answer : JSON.stringify(data.answer);
+      setHistory([...next, { role: "assistant", content: answer }]);
     } catch (err) {
       setError(err.message ?? "Something went wrong.");
       setHistory(next);
     } finally {
       setLoading(false);
-      // Optional: use a small timeout to ensure DOM is ready
       setTimeout(() => inputRef.current?.focus(), 0);
     }
   }
@@ -123,6 +129,7 @@ export default function ChatTab({ Card, PlaceholderBox, result }) {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       send();
+      console.log("answer type:", typeof response.answer, response.answer);
     }
   }
 

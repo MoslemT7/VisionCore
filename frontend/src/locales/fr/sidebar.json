@@ -1,0 +1,20 @@
+{
+  "menu": "Menu",
+  "appName": "Dronaeon",
+  "appTag": "ANALYSE IA",
+  "nav": {
+    "grid": "Tableau de bord",
+    "analyser": "Analyseur",
+    "history": "Historique",
+    "chat": "IA Chat",
+    "cog": "Paramètres"
+  },
+  "tooltip": {
+    "collapse": "Réduire la barre latérale",
+    "expand": "Étendre la barre latérale"
+  },
+  "footer": {
+    "role": "RÔLE : ADMIN",
+    "user": "Analyste Opérateur"
+  }
+}

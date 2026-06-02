@@ -1,0 +1,31 @@
+{
+  "pages": {
+    "grid": {
+      "title": "Tableau de bord",
+      "sub": "Vue d'ensemble et analyses"
+    },
+    "analyser": {
+      "title": "Analyseur",
+      "sub": "Upload · Traitement · Revue"
+    },
+    "history": {
+      "title": "Historique",
+      "sub": "Historique des analyses"
+    },
+    "chat": {
+      "title": "IA Chat",
+      "sub": "Poser des questions sur les vidéos"
+    },
+    "cog": {
+      "title": "Paramètres",
+      "sub": "Préférences et configuration"
+    },
+    "status": {
+      "syncing": "SYNCHRONISATION",
+      "live": "EN LIGNE",
+      "offline": "API HORS LIGNE"
+    }
+  },
+  "appName": "Dronaeon"
+
+}

@@ -1,0 +1,25 @@
+{
+  "test": "fdsfdsf",
+  "sections": {
+    "personDetection": "Person Detection Overview",
+    "performance": "Performance",
+    "videoMeta": "Video Metadata",
+    "aiSummary": "AI Summary"
+  },
+  "stats": {
+    "framesProcessed": "Frames Processed",
+    "totalDetections": "Total Detections",
+    "uniquePersons": "Unique Persons",
+    "avgConfidence": "Avg Confidence",
+    "avgPerFrame": "Avg Persons / Frame",
+    "peakPerFrame": "Peak Persons in Frame",
+    "processingTime": "Processing Time",
+    "throughput": "Throughput",
+    "avgInference": "Avg Inference",
+    "inferenceRange": "Inference Range",
+    "resolution": "Resolution",
+    "sourceFps": "Source FPS",
+    "duration": "Duration",
+    "sampledAt": "Sampled At"
+  }
+}

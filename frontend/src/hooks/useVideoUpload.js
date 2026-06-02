@@ -9,6 +9,7 @@ export function useVideoUpload() {
   const [error, setError]       = useState(null);
   const [progress, setProgress] = useState(0);
   const [status, setStatus]     = useState("idle");
+  const [analysisProgress, setAnalysisProgress] = useState(null);
 
   const upload = async (file) => {
     setLoading(true);
@@ -50,8 +51,10 @@ export function useVideoUpload() {
             }
 
             const data = await pollRes.json();
+            console.log("POLL DATA:", JSON.stringify(data));
 
-            // Mirror backend progress (never drop below 5 to avoid visual jump)
+            setAnalysisProgress(data);
+
             if (data.progress != null) {
               setProgress(Math.max(5, data.progress));
             }
@@ -110,6 +113,8 @@ export function useVideoUpload() {
           const pollRes = await fetch(`${BASE_URL}/analyze/images/${job_id}`);
           if (!pollRes.ok) { clearInterval(interval); reject(new Error(`Polling error: ${pollRes.status}`)); return; }
           const data = await pollRes.json();
+          setAnalysisProgress(data);
+
           if (data.progress != null) setProgress(Math.max(5, data.progress));
           if (data.status === "completed") {
             clearInterval(interval);
@@ -144,5 +149,6 @@ export function useVideoUpload() {
   }
 };
 
-return { upload, analyzeImages, loading, result, error, progress, status };
+  return { upload, analyzeImages, loading, result, error, progress, status, analysisProgress };
+
 }

@@ -4,7 +4,8 @@ import { API_BASE } from '../api/client';
 
 export function VideoUpload() {
   const fileInputRef = useRef(null);
-  const { upload, loading, result, error, progress } = useVideoUpload();
+  const { upload, analyzeImages, loading, result, error, progress, status, analysisProgress } = useVideoUpload();
+
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];

@@ -1,0 +1,29 @@
+{
+  "pages": {
+    "grid": {
+      "title": "Dashboard",
+      "sub": "Overview & analytics"
+    },
+    "analyser": {
+      "title": "Analyser",
+      "sub": "Upload · Process · Review"
+    },
+    "history": {
+      "title": "History",
+      "sub": "History of Analysis"
+    },
+    "chat": {
+      "title": "AI Chat",
+      "sub": "Ask questions about footage"
+    },
+    "cog": {
+      "title": "Settings",
+      "sub": "Preferences & configuration"
+    }
+  },
+  "status": {
+    "syncing": "SYNCING",
+    "live": "LIVE",
+    "offline": "API OFFLINE"
+  }
+}

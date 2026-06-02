@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { captionApi } from "../../api/captionApi.js";
 import {
   Film, Eye, Users, Clock, Cpu, Zap, Bot,
@@ -97,8 +98,9 @@ function AnalysisSection({ title, content }) {
 }
 
 export default function SummaryTab({ Card, PlaceholderBox, result, jobId }) {
+  const { t } = useTranslation("summary");
+  console.log(t("test"));
   const hasResult = !!result;
-
   const totalFrames     = result?.total_frames         ?? null;
   const totalDetections = result?.total_detections     ?? null;
   const elapsedTime     = result?.elapsed_time != null ? `${result.elapsed_time}s` : null;
@@ -137,70 +139,37 @@ export default function SummaryTab({ Card, PlaceholderBox, result, jobId }) {
 
   return (
     <div className="space-y-5">
-      <SectionHeader>Person Detection Overview</SectionHeader>
+      <SectionHeader>{t("sections.personDetection")}</SectionHeader>
 
       <div className="grid grid-cols-4 gap-3">
-        <StatBox icon={Film}   label="Frames Processed"    accent="text-blue-400"    value={totalFrames} />
-        <StatBox icon={Eye}    label="Total Detections"    accent="text-cyan-400"    value={totalDetections} />
-        <StatBox icon={Users}  label="Unique Persons"      accent="text-emerald-400" value={uniquePersons} />
-        <StatBox icon={Target} label="Avg Confidence"      accent="text-amber-400"   value={avgConf} />
+        <StatBox icon={Film}   label={t("stats.framesProcessed")}    accent="text-blue-400"    value={totalFrames} />
+        <StatBox icon={Eye}    label={t("stats.totalDetections")}    accent="text-cyan-400"    value={totalDetections} />
+        <StatBox icon={Users}  label={t("stats.uniquePersons")}      accent="text-emerald-400" value={uniquePersons} />
+        <StatBox icon={Target} label={t("stats.avgConfidence")}      accent="text-amber-400"   value={avgConf} />
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <StatBox icon={Activity}   label="Avg Persons / Frame"     accent="text-pink-400"   value={avgDensity} />
-        <StatBox icon={TrendingUp} label="Peak Persons in Frame"   accent="text-orange-400" value={peakDensity} />
+        <StatBox icon={Activity}   label={t("stats.avgPerFrame")}     accent="text-pink-400"   value={avgDensity} />
+        <StatBox icon={TrendingUp} label={t("stats.peakPerFrame")}   accent="text-orange-400" value={peakDensity} />
       </div>
 
-      <SectionHeader>Performance</SectionHeader>
+      <SectionHeader>{t("sections.performance")}</SectionHeader>
 
       <div className="grid grid-cols-4 gap-3">
-        <StatBox icon={Clock}    label="Processing Time"  accent="text-purple-400" value={elapsedTime} />
-        <StatBox icon={Zap}      label="Throughput"       accent="text-yellow-400" value={throughput} />
-        <StatBox icon={Cpu}      label="Avg Inference"    accent="text-amber-400"  value={avgInference} />
-        <StatBox icon={Gauge}    label="Inference Range"  accent="text-slate-400"  value={inferenceRange} sub="min – max" />
+        <StatBox icon={Clock}    label={t("stats.processingTime")}  accent="text-purple-400" value={elapsedTime} />
+        <StatBox icon={Zap}      label={t("stats.throughput")}       accent="text-yellow-400" value={throughput} />
+        <StatBox icon={Cpu}      label={t("stats.avgInference")}    accent="text-amber-400"  value={avgInference} />
+        <StatBox icon={Gauge}    label={t("stats.inferenceRange")}  accent="text-slate-400"  value={inferenceRange} sub={t("misc.minMax")} />
       </div>
 
-      <SectionHeader>Video Metadata</SectionHeader>
+      <SectionHeader>{t("sections.videoMeta")}</SectionHeader>
 
       <div className="grid grid-cols-4 gap-3">
-        <StatBox icon={Target}    label="Resolution"  accent="text-cyan-300"   value={resolution} />
-        <StatBox icon={Film}      label="Source FPS"  accent="text-blue-300"   value={sourceFps} />
-        <StatBox icon={Clock}     label="Duration"    accent="text-slate-300"  value={duration} />
-        <StatBox icon={BarChart2} label="Sampled At"  accent="text-indigo-300" value={processedFps} sub={frameStep} />
+        <StatBox icon={Target}    label={t("stats.resolution")}  accent="text-cyan-300"   value={resolution} />
+        <StatBox icon={Film}      label={t("stats.sourceFps")}  accent="text-blue-300"   value={sourceFps} />
+        <StatBox icon={Clock}     label={t("stats.duration")}    accent="text-slate-300"  value={duration} />
+        <StatBox icon={BarChart2} label={t("stats.sampledAt")}  accent="text-indigo-300" value={processedFps} sub={frameStep} />
       </div>
-
-      <Card className="p-4">
-        <div className="flex items-center gap-2 mb-3">
-          <Bot size={13} className="text-blue-400" />
-          <p className="text-xs font-semibold text-white">AI Summary</p>
-        </div>
-
-        {summary ? (
-          <>
-            <p className="text-sm text-slate-300 leading-relaxed mb-4">{summary}</p>
-            {sceneCaps?.length > 0 && (
-              <>
-                <div className="h-px bg-slate-800 mb-4" />
-                <p className="text-[10px] font-mono font-semibold text-slate-600 uppercase tracking-widest mb-3">
-                  Scene Breakdown · {sceneCaps.length} scenes
-                </p>
-                <SceneCaptions scenes={sceneCaps} />
-              </>
-            )}
-          </>
-        ) : (
-          <>
-            <div className="space-y-2">
-              {[100, 83, 80, 92, 75].map((w, i) => (
-                <div key={i} className="h-2.5 rounded bg-slate-800 animate-pulse" style={{ width: `${w}%` }} />
-              ))}
-            </div>
-            <p className="text-[11px] text-slate-600 mt-3 italic">
-              Summary will appear once analysis completes.
-            </p>
-          </>
-        )}
-      </Card>
     </div>
   );
 }

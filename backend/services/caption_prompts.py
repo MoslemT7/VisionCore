@@ -18,8 +18,8 @@ def scene_prompt(scene: dict, index: int) -> str:
     else:
         pose_block = ""
 
-    active   = scene.get("active_persons", 0)
-    mobile   = scene.get("mobile_persons", 0)
+    active     = scene.get("active_persons", 0)
+    mobile     = scene.get("mobile_persons", 0)
     stationary = active - mobile
 
     person_block = (
@@ -29,20 +29,25 @@ def scene_prompt(scene: dict, index: int) -> str:
         f"  - Likely stationary: {stationary}"
     ) if active > 0 else ""
 
-    return f"""You are a drone-based aerial surveillance analyst. Write ONE sentence describing scene {index + 1}.
+    return f"""You are an aerial drone analyst. Write ONE sentence describing scene {index + 1}.
 
 TIME WINDOW : {scene['start_s']}s → {scene['end_s']}s
-DETECTED OBJECTS:
+DETECTION DATA (secondary reference only):
 {obj_lines}{person_block}{pose_block}
+
+Your sentence must prioritise VISUAL ENVIRONMENT over detections:
+- What does the setting look like? (urban street, park, rooftop, open field, parking lot, beach, etc.)
+- What time of day does it appear to be? (bright daylight, golden hour, dusk, night, overcast)
+- What is the lighting quality? (harsh shadows suggesting midday, soft diffuse light, artificial lighting)
+- What surface textures or structures are visible from above? (tarmac, grass, concrete, sand, rooftops)
+- What is the general atmosphere or mood of the scene?
+- Only briefly reference detected objects/persons if they add meaningful context.
 
 Rules:
 - Exactly one sentence.
-- Name objects explicitly — never say "various objects".
+- Lead with environment and time-of-day inference, not with object counts.
 - Do not start with "In this scene".
 - Write from an elevated aerial perspective (top-down or angled).
-- Mention dominant pose/activity if pose data is present (e.g. walking, standing, lying).
-- If mobile persons > 0, suggest movement or transit. If mostly stationary, suggest clustering or gathering.
-- Reference object size (area) to infer proximity to camera if relevant.
 """.strip()
 
 
@@ -84,25 +89,30 @@ def global_summary_prompt(
 
     total_persons = sum(dominant_poses.values()) if dominant_poses else "?"
 
-    return f"""You are a drone video intelligence system. Write a concise natural-language summary of this aerial surveillance footage.
+    return f"""You are a drone video intelligence analyst. Write a concise natural-language summary of this aerial surveillance footage.
 
 VIDEO DURATION   : {video_meta.get('duration_s', '?')}s
 RESOLUTION       : {video_meta.get('width', '?')}x{video_meta.get('height', '?')}
 SOURCE FPS       : {video_meta.get('source_fps', '?')}
 TOTAL DETECTIONS : {detection_summary.get('total_detections', '?')}
 UNIQUE PERSONS   : {total_persons}
-UNIQUE OBJECTS   : {detection_summary.get('total_unique_objects', '?')}
-TOP CLASSES      : {top_classes}
-AVG DET/FRAME    : {detection_summary.get('avg_detections_per_frame', '?')}{pose_block}{dominant_block}
+TOP CLASSES      : {top_classes}{pose_block}{dominant_block}
 
 SCENE-BY-SCENE CAPTIONS:
 {caption_block}
 
+Your summary must prioritise CONTEXTUAL UNDERSTANDING:
+
+1. ENVIRONMENT & SETTING — What type of location is this? (street, plaza, park, industrial area, residential, etc.)
+2. TIME OF DAY — Based on lighting, shadows, and visibility, estimate the time of day.
+3. ATMOSPHERE — What is the overall mood or context? (busy transit, quiet area, public event, emergency, etc.)
+4. ACTIVITY PATTERNS — Are people moving or stationary? Clustered or dispersed? What does this suggest?
+5. DETECTIONS (brief) — Only mention object/person counts if they add meaningful intelligence value.
+
 Rules:
 - 3-5 sentences maximum.
-- Cover: what is visible from aerial perspective, dominant activity, spatial organisation.
-- Interpret pose data: what do the dominant postures suggest (crowd waiting, people in transit, individuals prone/injured)?
-- Comment on movement patterns: are persons mobile or stationary? Clustered or dispersed?
-- Do not repeat raw numbers verbatim — interpret and contextualise them.
+- Lead with environment and time-of-day, not with numbers.
+- Interpret rather than report — what does the scene suggest is happening?
 - Write in past tense.
+- Do not repeat raw numbers verbatim.
 """.strip()

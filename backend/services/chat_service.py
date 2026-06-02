@@ -15,27 +15,58 @@ OLLAMA_URL      = os.getenv("OLLAMA_URL")
 OLLAMA_MODEL    = os.getenv("OLLAMA_MODEL")
 LLM_MAX_TOKENS  = int(os.getenv("LLM_MAX_TOKENS"))
 LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE"))
+OPENROUTER_URL     = os.getenv("OPENROUTER_URL", "https://openrouter.ai/api/v1")
+OPENROUTER_MODEL   = os.getenv("OPENROUTER_MODEL", "openai/gpt-4o-mini")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 
 PERSON_LABELS = {"person", "pedestrian", "item"}
 
 def _col():
     return MongoClient(MONGO_URI)[DB_NAME][COLLECTION]
 
-async def _call_llm(messages: list[dict]) -> str:
+
+
+async def _call_ollama(messages: list[dict], client: httpx.AsyncClient) -> str:
     payload = {
-        "model":    OLLAMA_MODEL,
+        "model": OLLAMA_MODEL,
         "messages": messages,
-        "stream":   False,
+        "stream": False,
         "options": {
             "num_predict": LLM_MAX_TOKENS,
             "temperature": LLM_TEMPERATURE,
         },
     }
-    async with httpx.AsyncClient(timeout=120) as client:
-        response = await client.post(f"{OLLAMA_URL}/api/chat", json=payload)
+    response = await client.post(f"{OLLAMA_URL}/api/chat", json=payload)
     if response.status_code != 200:
         raise RuntimeError(f"Ollama error {response.status_code}: {response.text}")
     return response.json()["message"]["content"].strip()
+
+async def _call_openrouter(messages: list[dict], client: httpx.AsyncClient) -> str:
+    payload = {
+        "model": OPENROUTER_MODEL,
+        "messages": messages,
+        "max_tokens": LLM_MAX_TOKENS,
+        "temperature": LLM_TEMPERATURE,
+    }
+    response = await client.post(
+        f"{OPENROUTER_URL}/chat/completions",
+        json=payload,
+        headers={
+            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+            "Content-Type": "application/json",
+        },
+    )
+    if response.status_code != 200:
+        raise RuntimeError(f"OpenRouter error {response.status_code}: {response.text}")
+    return response.json()["choices"][0]["message"]["content"].strip()
+
+async def _call_llm(messages: list[dict]) -> str:
+    async with httpx.AsyncClient(timeout=120) as client:
+        try:
+            return await _call_ollama(messages, client)
+        except Exception as e:
+            print(f"[LLM] Ollama failed ({e}), falling back to OpenRouter...")
+            return await _call_openrouter(messages, client)
 
 def _is_person(label: str) -> bool:
     return label.lower() in PERSON_LABELS

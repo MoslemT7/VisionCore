@@ -1,0 +1,23 @@
+{
+  "menu": "Menu",
+  "appname": "Dronaeon",
+  "app": {
+    "name": "Dronaeon",
+    "tag": "AI ANALYSIS"
+  },
+  "nav": {
+    "grid": "Dashboard",
+    "analyser": "Analyser",
+    "history": "History",
+    "chat": "AI Chat",
+    "cog": "Settings"
+  },
+  "tooltip": {
+    "collapse": "Collapse sidebar",
+    "expand": "Expand sidebar"
+  },
+  "footer": {
+    "role": "ROLE: ADMIN",
+    "user": "Analyst Operator"
+  }
+}

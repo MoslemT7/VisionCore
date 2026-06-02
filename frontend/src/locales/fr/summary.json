@@ -1,0 +1,25 @@
+{ 
+    "sections": { 
+        "personDetection": "Aperçu de la détection de personnes", 
+        "performance": "Performances", 
+        "videoMeta": "Métadonnées vidéo", 
+        "aiSummary": "Résumé IA", 
+        "sceneBreakdown": "Répartition des scènes · {{count}} scènes" 
+    }, 
+    "stats": { 
+        "framesProcessed": "Trames traitées", 
+        "totalDetections": "Total des détections", 
+        "uniquePersons": "Personnes uniques", 
+        "avgConfidence": "Confiance moyenne", 
+        "avgPerFrame": "Moyenne de personnes/frame", 
+        "peakPerFrame": "Pic de personnes dans le cadre", 
+        "processingTime": "Durée de traitement", 
+        "throughput": "Débit", 
+        "avgInference": "Inférence moyenne", 
+        "inferenceRange": "Plage d'inférence", 
+        "resolution": "Résolution", 
+        "sourceFps": "FPS sources", 
+        "duration": "Durée", 
+        "sampledAt": "Échantillonné à" 
+    }
+}

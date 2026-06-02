@@ -1,0 +1,17 @@
+{
+  "appName": "Dronaeon",
+  "notifications": {
+    "title": "Notifications",
+    "new": "1 NEW",
+    "analysisComplete": "Analysis complete",
+    "markAllRead": "MARK ALL READ"
+  },
+  "tabs": {
+    "summary": "Summary",
+    "video": "Visualizer",
+    "objects": "Objects",
+    "chat": "Chat IA",
+    "captions": "Captions IA",
+    "timeline": "Timeline"
+  }
+}

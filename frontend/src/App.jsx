@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useAuth } from "./hooks/useAuth";
+import LoginForm from "./components/LoginForm";
+import RegisterForm from "./components/RegisterForm";
 import Sidebar from "./components/layout/Sidebar";
 import TopBar  from "./components/layout/TopBar";
 import DashboardPage from "./pages/Dashboard";
@@ -9,6 +12,9 @@ import SettingsPage  from "./pages/SettingsPage";
 import { useVideoUpload } from "./hooks/useVideoUpload";
 
 export default function App() {
+  const { token, error, handleLogin, handleRegister, logout } = useAuth();
+  const [authPage, setAuthPage] = useState("login");
+
   const [activeNav, setActiveNav] = useState("analyser");
   const [file,         setFile        ] = useState(null);
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -22,12 +28,13 @@ export default function App() {
   const {
     upload,
     analyzeImages,
-    loading:  analysisLoading,
+    loading:          analysisLoading,
     result,
-    error:    analysisError,
-    progress: analysisProgress,
-    status:   analysisStatus,
-    reset:    resetUpload,
+    error:            analysisError,
+    progress:         analysisProgressPct,
+    status:           analysisStatus,
+    reset:            resetUpload,
+    analysisProgress,
   } = useVideoUpload();
 
   const resetAnalyser = () => {
@@ -49,15 +56,31 @@ export default function App() {
     result,
     analysisError,
     analysisProgress,
+    analysisProgressPct,
     analysisStatus,
     upload,
     analyzeImages,
     reset: resetAnalyser,
   };
 
+  if (!token) {
+    return authPage === "login" ? (
+      <LoginForm onLogin={handleLogin} onSwitch={() => setAuthPage("register")} error={error} />
+    ) : (
+      <RegisterForm
+        onRegister={async (u, e, p) => {
+          const ok = await handleRegister(u, e, p);
+          if (ok) setAuthPage("login");
+        }}
+        onSwitch={() => setAuthPage("login")}
+        error={error}
+      />
+    );
+  }
+
   return (
     <div className="flex h-screen bg-slate-950 overflow-hidden">
-      <Sidebar activeNav={activeNav} onNavChange={setActiveNav} />
+      <Sidebar activeNav={activeNav} onNavChange={setActiveNav} onLogout={logout} />
 
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         <TopBar activeNav={activeNav} />

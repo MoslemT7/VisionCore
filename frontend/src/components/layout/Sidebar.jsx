@@ -11,6 +11,9 @@ import {
   PanelLeftOpen,
   Circle,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import UserProfile from "../UserProfile";
+import { useAuth } from "../../hooks/useAuth";
 
 const NAV_ITEMS = [
   {
@@ -46,6 +49,7 @@ const NAV_ITEMS = [
 ];
 
 function NavItem({ item, isActive, onClick, collapsed }) {
+  const { t } = useTranslation("sidebar");
   const Icon = item.icon;
 
   if (collapsed) {
@@ -53,7 +57,7 @@ function NavItem({ item, isActive, onClick, collapsed }) {
       <div className="relative group/tooltip">
         <button
           onClick={() => onClick(item.id)}
-          title={item.label}
+          title={t(`nav.${item.id}`)}
           className={`
             w-full flex items-center justify-center p-2.5 rounded-xl
             transition-all duration-150
@@ -67,7 +71,6 @@ function NavItem({ item, isActive, onClick, collapsed }) {
           <Icon size={17} strokeWidth={isActive ? 2.25 : 1.75} />
         </button>
 
-        {/* Tooltip */}
         <div className="
           pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-3 z-50
           opacity-0 group-hover/tooltip:opacity-100 translate-x-1 group-hover/tooltip:translate-x-0
@@ -78,8 +81,7 @@ function NavItem({ item, isActive, onClick, collapsed }) {
             text-xs font-medium px-2.5 py-1.5 rounded-lg whitespace-nowrap
             shadow-xl shadow-black/40
           ">
-            {item.label}
-            {/* Arrow */}
+            {t(`nav.${item.id}`)}
             <span className="absolute right-full top-1/2 -translate-y-1/2 border-4 border-transparent border-r-slate-700" />
           </div>
         </div>
@@ -110,7 +112,9 @@ function NavItem({ item, isActive, onClick, collapsed }) {
         <Icon size={16} strokeWidth={isActive ? 2.25 : 1.75} />
       </span>
 
-      <span className="flex-1 min-w-0 truncate">{item.label}</span>
+      <span className="flex-1 min-w-0 truncate">
+        {t(`nav.${item.id}`)}
+      </span>
 
       {isActive && (
         <ChevronRight size={12} className="flex-shrink-0 text-blue-400/60" />
@@ -129,7 +133,9 @@ function NavItem({ item, isActive, onClick, collapsed }) {
 
 export default function Sidebar({ activeNav, onNavChange }) {
   const [collapsed, setCollapsed] = useState(false);
-
+  const { t } = useTranslation("sidebar");
+  const { logout } = useAuth();
+  
   return (
     <aside
       style={{ transition: "width 220ms cubic-bezier(0.4,0,0.2,1)" }}
@@ -145,30 +151,33 @@ export default function Sidebar({ activeNav, onNavChange }) {
           ${collapsed ? "justify-center px-0" : "justify-between px-4"}
         `}
       >
-        {/* Logo mark — always visible */}
         <div className="flex items-center gap-2.5 min-w-0">
-          <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0 shadow-[0_0_14px_rgba(37,99,235,0.45)]">
-            <Video size={15} strokeWidth={2} className="text-white" />
+          <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center flex-shrink-0 shadow-[0_0_14px_rgba(37,99,235,0.45)]">
+            <img
+                src="/icon.png"
+                width={150}
+                height={200}
+                alt="icon"
+                style={{ filter: "invert(1)" }}
+              />
           </div>
 
-          {/* Wordmark — hidden when collapsed */}
           {!collapsed && (
             <div className="min-w-0 overflow-hidden">
               <p className="text-sm font-bold text-slate-100 leading-tight tracking-tight whitespace-nowrap">
-                Dronaeon
+                {t("appName")}
               </p>
               <p className="text-[10px] text-slate-500 font-mono tracking-widest whitespace-nowrap">
-                AI ANALYSIS
+                {t("appTag")}
               </p>
             </div>
           )}
         </div>
 
-        {/* Collapse toggle — only show inline when expanded */}
         {!collapsed && (
           <button
             onClick={() => setCollapsed(true)}
-            title="Collapse sidebar"
+            title={t("tooltip.collapse")}
             className="flex-shrink-0 p-1.5 rounded-lg text-slate-600 hover:text-slate-300 hover:bg-white/[0.05] transition-all"
           >
             <PanelLeftClose size={15} />
@@ -184,7 +193,7 @@ export default function Sidebar({ activeNav, onNavChange }) {
       >
         {!collapsed && (
           <p className="text-[10px] font-mono font-semibold text-slate-600 uppercase tracking-widest px-2 pb-2.5">
-            Menu
+            {t("menu")}
           </p>
         )}
 
@@ -206,7 +215,6 @@ export default function Sidebar({ activeNav, onNavChange }) {
         }`}
       >
         {collapsed ? (
-          /* Collapsed footer: avatar + expand button stacked */
           <div className="flex flex-col items-center gap-2">
             <div className="relative">
               <div className="w-7 h-7 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 border border-slate-600 flex items-center justify-center text-[11px] font-bold text-slate-300 flex-shrink-0">
@@ -217,29 +225,14 @@ export default function Sidebar({ activeNav, onNavChange }) {
 
             <button
               onClick={() => setCollapsed(false)}
-              title="Expand sidebar"
+              title={t("tooltip.expand")}
               className="p-1.5 rounded-lg text-slate-600 hover:text-slate-300 hover:bg-white/[0.05] transition-all"
             >
               <PanelLeftOpen size={15} />
             </button>
           </div>
         ) : (
-          <div className="flex items-center gap-2.5">
-            <div className="relative flex-shrink-0">
-              <div className="w-7 h-7 rounded-full bg-gradient-to-br from-slate-600 to-slate-700 border border-slate-600 flex items-center justify-center text-[11px] font-bold text-slate-300">
-                AO
-              </div>
-              <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-500 border border-slate-900 shadow-[0_0_5px_rgba(16,185,129,0.6)]" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-xs font-semibold text-slate-300 truncate leading-tight">
-                Analyst Operator
-              </p>
-              <p className="text-[10px] text-slate-500 font-mono">
-                ROLE: ADMIN
-              </p>
-            </div>
-          </div>
+          <UserProfile onLogout={logout} />
         )}
       </div>
     </aside>
