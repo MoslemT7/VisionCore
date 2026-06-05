@@ -1,23 +1,29 @@
 import { useState } from "react";
+import { register } from "../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
-export default function RegisterForm({ onRegister, onSwitch, error }) {
+export default function RegisterForm({ onSwitch }) {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [loading, setLoading] = useState(false);
-  const [localError, setLocalError] = useState("");
-  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   async function handleSubmit() {
-    if (password !== confirm) return setLocalError("Passwords do not match");
-    if (password.length < 6) return setLocalError("Password must be at least 6 characters");
-    setLocalError("");
+    if (password !== confirm) return setError("Passwords do not match");
+    if (password.length < 6) return setError("Password must be at least 6 characters");
+    setError("");
     setLoading(true);
-    await onRegister(username, email, password);
+    try {
+      await register(email, password, username);
+      navigate("/dashboard");
+    } catch (err) {
+      setError(err.message);
+    }
     setLoading(false);
   }
-
-  const displayError = localError || error;
 
   return (
     <div className="min-h-screen bg-[#020818] flex items-center justify-center relative overflow-hidden">
@@ -35,7 +41,7 @@ export default function RegisterForm({ onRegister, onSwitch, error }) {
         <div className="mb-10 text-center">
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-cyan-400/60 text-xs tracking-[0.3em] uppercase font-mono">VisionCore OS</span>
+            <span className="text-cyan-400/60 text-xs tracking-[0.3em] uppercase font-mono">Dronaeon</span>
             <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
           </div>
           <h1 className="text-4xl font-bold text-white tracking-tight" style={{ fontFamily: "'Orbitron', monospace" }}>
@@ -48,26 +54,28 @@ export default function RegisterForm({ onRegister, onSwitch, error }) {
           <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
           <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
 
-          {displayError && (
+          {error && (
             <div className="mb-6 flex items-center gap-3 bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3">
               <div className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0" />
-              <p className="text-red-400 text-sm font-mono">{displayError}</p>
+              <p className="text-red-400 text-sm font-mono">{error}</p>
             </div>
           )}
-        <div className="space-y-1.5">
-            <label className="text-cyan-400/70 text-xs font-mono tracking-[0.2em] uppercase">Email</label>
-            <div className="relative">
+
+          <div className="space-y-5">
+            <div className="space-y-1.5">
+              <label className="text-cyan-400/70 text-xs font-mono tracking-[0.2em] uppercase">Email</label>
+              <div className="relative">
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 text-cyan-500/40 font-mono text-sm">›</div>
                 <input
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                placeholder="operator@domain.com"
-                className="w-full bg-slate-800/50 border border-slate-700/50 focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/20 rounded-lg pl-8 pr-4 py-3 text-white placeholder-slate-600 font-mono text-sm outline-none transition-all duration-200"
+                  type="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  placeholder="operator@domain.com"
+                  className="w-full bg-slate-800/50 border border-slate-700/50 focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/20 rounded-lg pl-8 pr-4 py-3 text-white placeholder-slate-600 font-mono text-sm outline-none transition-all duration-200"
                 />
+              </div>
             </div>
-        </div>
-          <div className="space-y-5">
+
             <div className="space-y-1.5">
               <label className="text-cyan-400/70 text-xs font-mono tracking-[0.2em] uppercase">Username</label>
               <div className="relative">
@@ -162,7 +170,7 @@ export default function RegisterForm({ onRegister, onSwitch, error }) {
         </div>
 
         <p className="text-center text-slate-700 text-xs font-mono mt-6 tracking-widest">
-          VISIONCORE · ENCRYPTED CHANNEL · v1.0.0
+          Dronaeon · ENCRYPTED CHANNEL · v1.0.0
         </p>
       </div>
 

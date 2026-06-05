@@ -31,7 +31,7 @@ function Message({ role, content }) {
           : <Bot  size={13} className="text-slate-400" />
         }
       </div>
-      <div className={`max-w-[78%] px-3.5 py-2.5 rounded-xl text-sm leading-relaxed
+      <div className={`max-w-[85%] px-3.5 py-2.5 rounded-xl text-m leading-relaxed
         ${isUser
           ? "bg-blue-600/20 border border-blue-500/20 text-slate-200 rounded-tr-sm"
           : "bg-slate-800/70 border border-slate-700/40 text-slate-300 rounded-tl-sm"

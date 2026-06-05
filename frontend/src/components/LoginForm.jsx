@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 export default function LoginForm({ onLogin, onSwitch, error }) {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit() {
     setLoading(true);
-    await onLogin(username, password);
+    await onLogin(email, password);
     setLoading(false);
   }
 
@@ -48,14 +48,15 @@ export default function LoginForm({ onLogin, onSwitch, error }) {
 
           <div className="space-y-5">
             <div className="space-y-1.5">
-              <label className="text-cyan-400/70 text-xs font-mono tracking-[0.2em] uppercase">Username</label>
+              <label className="text-cyan-400/70 text-xs font-mono tracking-[0.2em] uppercase">Email</label>
               <div className="relative">
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 text-cyan-500/40 font-mono text-sm">›</div>
                 <input
-                  value={username}
-                  onChange={e => setUsername(e.target.value)}
+                  type="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                   onKeyDown={e => e.key === "Enter" && handleSubmit()}
-                  placeholder="enter username"
+                  placeholder="operator@domain.com"
                   className="w-full bg-slate-800/50 border border-slate-700/50 focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/20 rounded-lg pl-8 pr-4 py-3 text-white placeholder-slate-600 font-mono text-sm outline-none transition-all duration-200"
                 />
               </div>

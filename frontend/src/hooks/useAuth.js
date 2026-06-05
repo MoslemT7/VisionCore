@@ -1,36 +1,25 @@
-import { useState } from "react";
-import { login, register } from "../api/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "../firebase";
 
-export function useAuth() {
-  const [token, setToken] = useState(localStorage.getItem("token"));
-  const [error, setError] = useState(null);
+export const register = async (email, password, username) => {
+  const { user } = await createUserWithEmailAndPassword(auth, email, password);
+  await updateProfile(user, { displayName: username });
+  await setDoc(doc(db, "users", user.uid), {
+    uid: user.uid,
+    email,
+    username,
+    createdAt: new Date(),
+  });
+  return user;
+};
 
-  async function handleLogin(username, password) {
-    try {
-      const data = await login(username, password);
-      localStorage.setItem("token", data.token);
-      setToken(data.token);
-      setError(null);
-    } catch (e) {
-      setError(e.message);
-    }
-  }
+export const login = (email, password) =>
+  signInWithEmailAndPassword(auth, email, password);
 
-  async function handleRegister(username, email, password) {
-    try {
-      await register(username, email, password);
-      setError(null);
-      return true;
-    } catch (e) {
-      setError(e.message);
-      return false;
-    }
-  }
-
-  function logout() {
-    localStorage.removeItem("token");
-    setToken(null);
-  }
-
-  return { token, error, handleLogin, handleRegister, logout };
-}
+export const logout = () => signOut(auth);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "./hooks/useAuth";
+import { useAuth } from "./context/AuthContext";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import Sidebar from "./components/layout/Sidebar";
@@ -12,7 +12,7 @@ import SettingsPage  from "./pages/SettingsPage";
 import { useVideoUpload } from "./hooks/useVideoUpload";
 
 export default function App() {
-  const { token, error, handleLogin, handleRegister, logout } = useAuth();
+  const { user, error, handleLogin, handleRegister, logout } = useAuth();
   const [authPage, setAuthPage] = useState("login");
 
   const [activeNav, setActiveNav] = useState("analyser");
@@ -63,7 +63,7 @@ export default function App() {
     reset: resetAnalyser,
   };
 
-  if (!token) {
+  if (!user) {
     return authPage === "login" ? (
       <LoginForm onLogin={handleLogin} onSwitch={() => setAuthPage("register")} error={error} />
     ) : (
